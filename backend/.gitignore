@@ -1,0 +1,52 @@
+# Python bytecode / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build artifacts
+build/
+dist/
+wheels/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Type checking / linting cache
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Azure / local tooling
+.azure/
+.azd/

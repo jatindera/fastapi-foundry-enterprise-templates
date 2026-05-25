@@ -1,0 +1,6 @@
+environment: local
+# Model profile groups agents by model need; e.g., 10 general-chat agents can use `general_chat`, allowing one deployment mapping change to be applied to all of them during reprovisioning.
+foundry:
+  models:
+    general_chat:
+      deployment_name: gpt-5.4-mini

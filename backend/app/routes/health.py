@@ -1,0 +1,15 @@
+from fastapi import APIRouter, Depends
+
+from app.core.config import Settings, get_settings
+from app.schemas.health import HealthResponse
+
+router = APIRouter(tags=["Health"])
+
+
+@router.get("/health", response_model=HealthResponse)
+def health_check(settings: Settings = Depends(get_settings)) -> HealthResponse:
+    return HealthResponse(
+        status="healthy",
+        app_name=settings.app_name,
+        environment=settings.app_env,
+    )

@@ -1,0 +1,20 @@
+environment: local
+
+agents:
+  hello-world-agent:
+    foundry_agent_name: hello-world-agent
+    #agent_version: "2"
+    enabled: true
+    local_tools: []
+
+  project-status-agent:
+    foundry_agent_name: project-status-agent
+    #agent_version: "1"
+    enabled: true
+    local_tools:
+      - get_project_status
+
+  research-analysis-agent:
+    foundry_agent_name: research-analysis-agent
+    enabled: true
+    local_tools: []

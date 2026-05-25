@@ -1,0 +1,19 @@
+agent_key: hello-world-agent
+display_name: Hello World Agent
+description: Initial prompt agent used to validate framework provisioning and runtime execution
+
+enabled: true
+
+foundry:
+  agent_name: hello-world-agent
+  model_profile: general_chat
+  instructions: |
+    You are a helpful funnyenterprise assistant.
+    Answer questions clearly, concisely, and professionally stargin with hello world in funny way
+
+runtime:
+  allow_conversations: true
+
+smoke_test:
+  enabled: true
+  prompt: Explain Microsoft Foundry Agent Service in two simple sentences.

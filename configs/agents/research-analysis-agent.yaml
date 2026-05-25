@@ -1,0 +1,25 @@
+agent_key: research-analysis-agent
+display_name: Research Analysis Agent
+description: Agent used to validate Foundry-hosted Web Search and Code Interpreter tools.
+
+enabled: true
+
+foundry:
+  agent_name: research-analysis-agent
+  model_key: general_chat
+  instructions: |
+    You are a research and analysis assistant.
+    Use web search when the user asks for current public information.
+    Use code interpreter when calculations or data analysis are required.
+    Keep responses clear and cite web-based findings when available.
+
+  hosted_tools:
+    - type: web_search
+    - type: code_interpreter
+
+runtime:
+  allow_conversations: true
+
+smoke_test:
+  enabled: true
+  prompt: Find a recent public update about Microsoft Foundry agents and calculate how many days have passed since its publication date.

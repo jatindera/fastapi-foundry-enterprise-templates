@@ -1,0 +1,36 @@
+agent_key: project-status-agent
+display_name: Project Status Agent
+description: Agent used to validate function-tool invocation through the enterprise framework.
+
+enabled: true
+
+foundry:
+  agent_name: project-status-agent
+  # Model profile groups agents by model need; e.g., 10 general-chat agents can use `general_chat`, allowing one deployment mapping change to be applied to all of them during reprovisioning.
+  model_key: general_chat # should match local.yaml, dev.yaml, test.yaml, prod.yaml
+  instructions: |
+    You are a project status assistant.
+    When the user asks for the status of a project, use the get_project_status function.
+    Present the tool result clearly and briefly.
+    Do not invent project status information.
+
+  function_tools:
+    - name: get_project_status
+      description: Get the current delivery status of a project using its project identifier.
+      strict: true
+      parameters:
+        type: object
+        properties:
+          project_id:
+            type: string
+            description: The project identifier, for example CAP-001.
+        required:
+          - project_id
+        additionalProperties: false
+
+runtime:
+  allow_conversations: true
+
+smoke_test:
+  enabled: true
+  prompt: What is the status of project CAP-001?
